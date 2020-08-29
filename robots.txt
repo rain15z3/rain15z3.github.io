@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+Allow: /posts/
+Allow: /about/
+Allow: /archives/
+Allow: /categories/
+Allow: /tags/
+Disallow: /js/
+Disallow: /css/
+Disallow: /lib/
+Disallow: /live2dw/
+
+Sitemap: https://blog.luoling8192.top/sitemap.xml
+Sitemap: https://blog.luoling8192.top/baidusitemap.xml

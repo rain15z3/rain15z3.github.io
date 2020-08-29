@@ -16,9 +16,21 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类 - 洛灵酱的小窝</title>
+  <title>【题解】USACO 愤怒的牛 - 洛灵酱的小窝</title>
+  
+    <meta name="keywords" content="题解,二分答案">
   
 
+  
+    <meta name="description" content="题目链接「一本通 1.2 例 1」愤怒的牛
+题目分析所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列），然后再用check()函数来判断答案的可行性。
+
+            求最小值最大或求最大值最小是典型的二分答案。
+          
+
+要注意的是二分的边界。
+
+推荐阅读：二分查找...">
   
 
   <!-- feed -->
@@ -428,7 +440,7 @@
 
   
   
-      <div class='cover-wrapper category dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="/images/wallpaper.webp"></div>
         
@@ -545,8 +557,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">【题解】USACO 愤怒的牛</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -575,38 +587,252 @@
         
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  <div class='article-header'>
     
-      <div class='post-wrapper'>
-        <article id="cat" class="post article white-box reveal shadow">
-          <h2>分类</h2>
-          <div class="all-cats">
-            
-              
-                <a class="" href="/categories/algorithm/">
-                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;算法竞赛</span>
-                  <span class="title">
-                    (5)
-                  </span>
-                </a>
-              
-                <a class="" href="/categories/daily/">
-                  <span><i class='fas fa-folder-open fa-fw' aria-hidden="true"></i>&nbsp;&nbsp;日常</span>
-                  <span class="title">
-                    (1)
-                  </span>
-                </a>
-              
-            
-          </div>
-          <br>
+      
+      <div class="article-meta" id="top">
+        
+        
+        
+          <h1 class="title">
+            <a href="/posts/algorithm/usaco-the-angry-bull.html">
+              【题解】USACO 愤怒的牛
+            </a>
+          </h1>
+        
+        <div class='new-meta-box'>
           
-        </article>
+            
+          
+            
+              <div class='new-meta-item author'>
+  <a class='author' href="https://blog.luoling8192.top" rel="nofollow">
+    <i class="fas fa-user fa-fw"></i>
+    <p>RainbowBird</p>
+  </a>
+</div>
+            
+          
+            
+              
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/algorithm/">算法竞赛</a>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Aug 28, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>386 words</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>1 min</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse busuanzi">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <p>
+        <span id="busuanzi_value_page_pv">
+          <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+        </span>
+        次浏览
+      </p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/posts/algorithm/usaco-the-angry-bull.html#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/posts/algorithm/usaco-the-angry-bull.html">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+        </div>
       </div>
     
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a target="_blank" rel="noopener" href="https://loj.ac/problem/10011">「一本通 1.2 例 1」愤怒的牛</a></p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列），然后再用<code>check()</code>函数来判断答案的可行性。</p>
+<div class="note info">
+            <p><span class='p yellow'>求最小值最大</span>或<span class='p yellow'>求最大值最小</span>是典型的二分答案。</p>
+          </div>
+
+<p>要注意的是二分的边界。</p>
+<blockquote>
+<p>推荐阅读：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq1515312832/article/details/105846202">二分查找怎么写，边界如何确定，我应该是要左边还是要右边，我为何如此的蠢？？？</a></p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* P10011 愤怒的牛</span></span><br><span class="line"><span class="comment"> * 来源: 信息学奥赛一本通 提高篇</span></span><br><span class="line"><span class="comment"> * 作者: RainbowBird</span></span><br><span class="line"><span class="comment"> * 日期: 2020-08-29</span></span><br><span class="line"><span class="comment"> * 算法: 二分答案</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last = a[<span class="number">0</span>]; <span class="comment">// 先塞第一个牛棚</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历区间</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = a.begin() + <span class="number">1</span>; it != a.end(); it++) &#123;</span><br><span class="line">        <span class="comment">// 如果当前的牛棚和上一个牛棚的距离大于或等于最大值</span></span><br><span class="line">        <span class="keyword">if</span> (*it - last &gt;= x) &#123;</span><br><span class="line">            last = *it;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果可以把牛全部放进牛棚</span></span><br><span class="line">        <span class="keyword">if</span> (count &gt;= m) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        a.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(a.begin(), a.end(), less&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// [l, r]为闭区间</span></span><br><span class="line">    <span class="keyword">int</span> l = a[<span class="number">0</span>], r = a[n<span class="number">-1</span>]; <span class="comment">// l, r, mid都为距离</span></span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>; <span class="comment">// mid为最短距离的最大值</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (check(mid)) l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    
+      
+      <div class='footer'>
+        
+        
+          
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/posts/algorithm/noip2003-table-tennis.html" title="【题解】NOIP2003 乒乓球" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【题解】NOIP2003 乒乓球</span><span class="excerpt">这道题我交了好几次，果然还是太菜了（
+说一下注意的点吧：
+
+要特判一下只有E的情况，应该输出0:0
+这里的11分制是指其中...</span></a><a class="item" href="/posts/algorithm/noip2000-sys-convert.html" title="【题解】NOIP2000 进制转换" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【题解】NOIP2000 进制转换</span><span class="excerpt">题目链接P1017 进制转换
+题目分析这道题考察的是负进制转换。
+我们都知道，十进制转化为二进制应该不断用原数除以2取余，...</span></a><a class="item" href="/posts/algorithm/tamplate-twophase-bfs.html" title="【模板】双向BFS" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【模板】双向BFS</span><span class="excerpt">我们都知道BFS搜索的时间复杂度为$O(N^2)$。
+而双向BFS搜索因为是从两边开始搜索，时间复杂度会优化很多，为朴素B...</span></a></div></section></div>
+        
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>本文作者：RainbowBird</p>
+
+                
+              
+                
+                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm/usaco-the-angry-bull.html>https://blog.luoling8192.top/posts/algorithm/usaco-the-angry-bull.html</a></p>
+                
+              
+                
+                  <p>版权声明： 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</p>
+
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
+    
+  </div>
   
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T17:40:10+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Aug 29, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/solution/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>题解</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/binary-answer/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分答案</p></a></div>
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/posts/algorithm/noip2000-sys-convert.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>【题解】NOIP2000 进制转换</p>
+          <p class='content'>题目链接P1017 进制转换
+题目分析这道题考察的是负进制转换。
+我们都知道，十进制转化为二进制应该不断用原数除以2取余，得到的余数由高位到低位排列则能得到十进制数字在二进制下的数字。
+
+
+十进...</p>
+        </a>
+      
+      
+        <a class='next' href='/posts/algorithm/tamplate-twophase-bfs.html'>
+          <p class='title'>【模板】双向BFS<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>我们都知道BFS搜索的时间复杂度为$O(N^2)$。
+而双向BFS搜索因为是从两边开始搜索，时间复杂度会优化很多，为朴素BFS的时间复杂度开根号。
+下面请看模板代码。
+
+
+输入样例：
+12345...</p>
+        </a>
+      
+    </div>
+  
+</article>
+
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
+</div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -694,6 +920,20 @@
 
 
 
+  <section class="widget toc-wrapper shadow desktop" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -755,6 +995,7 @@
 
 
 </aside>
+
 
 
       </div>

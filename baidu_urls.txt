@@ -1,5 +1,5 @@
 https://blog.luoling8192.top/posts/algorithm/noip2000-sys-convert.html
+https://blog.luoling8192.top/posts/algorithm/usaco-the-angry-bull.html
 https://blog.luoling8192.top/posts/algorithm/tamplate-twophase-bfs.html
 https://blog.luoling8192.top/posts/algorithm/noip2003-table-tennis.html
 https://blog.luoling8192.top/posts/algorithm/high-precision-template.html
-https://blog.luoling8192.top/posts/daily/welcome.html

@@ -2,7 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.luoling8192.top/friends/</loc>
+    <loc>https://blog.luoling8192.top/posts/algorithm/usaco-the-angry-bull.html</loc>
+    
+    <lastmod>2020-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/photos/</loc>
     
     <lastmod>2020-08-29</lastmod>
     
@@ -10,6 +17,13 @@
   
   <url>
     <loc>https://blog.luoling8192.top/posts/algorithm/noip2000-sys-convert.html</loc>
+    
+    <lastmod>2020-08-29</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/friends/</loc>
     
     <lastmod>2020-08-29</lastmod>
     
@@ -117,6 +131,13 @@
   
   <url>
     <loc>https://blog.luoling8192.top/tags/sys-convert/</loc>
+    <lastmod>2020-08-29</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/binary-answer/</loc>
     <lastmod>2020-08-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

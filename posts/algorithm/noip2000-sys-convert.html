@@ -214,29 +214,13 @@
             
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/movies/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photos/
                   
                   
                   
-                    id="movies"
+                    id="photos"
                   >
-                  <i class='fas fa-camera fa-fw'></i>观影
-                </a>
-                
-              </li>
-            
-          
-          
-            
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bangumis/
-                  
-                  
-                  
-                    id="bangumis"
-                  >
-                  <i class='fab fa-youtube fa-fw'></i>番剧
+                  <i class='fas fa-camera fa-fw'></i>相册
                 </a>
                 
               </li>
@@ -376,29 +360,13 @@
               
             
               <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/movies/
+                <a class="menuitem flat-box faa-parent animated-hover" href=/photos/
                   
                   
                   
-                    id="movies"
+                    id="photos"
                   >
-                  <i class='fas fa-camera fa-fw'></i>观影
-                </a>
-                
-              </li>
-            
-          
-            
-              
-            
-              <li>
-                <a class="menuitem flat-box faa-parent animated-hover" href=/bangumis/
-                  
-                  
-                  
-                    id="bangumis"
-                  >
-                  <i class='fab fa-youtube fa-fw'></i>番剧
+                  <i class='fas fa-camera fa-fw'></i>相册
                 </a>
                 
               </li>
@@ -517,7 +485,7 @@
               
               
               id="movies">
-              <i class='fas fa-camera fa-fw'></i><p>观影</p>
+              <i class='fas fa-video fa-fw'></i><p>观影</p>
             </a>
           
             <a href="/bangumis/"
@@ -525,6 +493,13 @@
               
               id="bangumis">
               <i class='fab fa-youtube fa-fw'></i><p>番剧</p>
+            </a>
+          
+            <a href="/photos/"
+              
+              
+              id="photos">
+              <i class='fas fa-camera fa-fw'></i><p>相册</p>
             </a>
           
             <a href="/shuoshuo/"
@@ -733,7 +708,7 @@
 <p>$19/-9=-2…1$</p>
 <p>$-2/-9=1…7$（注意这里不是<emp>$0...-2$</emp>！因为负数不能做余数。）</p>
 <p>$1/-9=0…1$（当商为0时计算完成）</p>
-<h2 id="算法代码"><a href="#算法代码" class="headerlink" title="算法代码"></a>算法代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* P1017 进制转换</span></span><br><span class="line"><span class="comment"> * 来源: NOIP2000</span></span><br><span class="line"><span class="comment"> * 作者: RainbowBird</span></span><br><span class="line"><span class="comment"> * 日期: 2020-08-28</span></span><br><span class="line"><span class="comment"> * 算法: 负进制转换</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> nums[<span class="number">20</span>] = &#123;<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;9&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, r;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;r);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d=&quot;</span>, n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> ans[<span class="number">10005</span>], cur = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n != <span class="number">0</span>) &#123; <span class="comment">// 注意这里是不等于，因为商可能为负数</span></span><br><span class="line">        <span class="keyword">int</span> mod = n % r; <span class="comment">// 获取余数</span></span><br><span class="line">        n /= r;          <span class="comment">// 获取商</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 如果余数小于0，那么商进一位，余数则等于进制数的绝对值减去余数的绝对值</span></span><br><span class="line">        <span class="keyword">if</span> (mod &lt; <span class="number">0</span>) n++, mod = <span class="built_in">abs</span>(r) - <span class="built_in">abs</span>(mod);</span><br><span class="line">        ans[cur++] = nums[mod];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 由高位到低位倒序输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = cur - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, ans[i]); </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;(base%d)\n&quot;</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* P1017 进制转换</span></span><br><span class="line"><span class="comment"> * 来源: NOIP2000</span></span><br><span class="line"><span class="comment"> * 作者: RainbowBird</span></span><br><span class="line"><span class="comment"> * 日期: 2020-08-28</span></span><br><span class="line"><span class="comment"> * 算法: 负进制转换</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span> nums[<span class="number">20</span>] = &#123;<span class="string">&#x27;0&#x27;</span>, <span class="string">&#x27;1&#x27;</span>, <span class="string">&#x27;2&#x27;</span>, <span class="string">&#x27;3&#x27;</span>, <span class="string">&#x27;4&#x27;</span>, <span class="string">&#x27;5&#x27;</span>, <span class="string">&#x27;6&#x27;</span>, <span class="string">&#x27;7&#x27;</span>, <span class="string">&#x27;8&#x27;</span>, <span class="string">&#x27;9&#x27;</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;D&#x27;</span>, <span class="string">&#x27;E&#x27;</span>, <span class="string">&#x27;F&#x27;</span>, <span class="string">&#x27;G&#x27;</span>, <span class="string">&#x27;H&#x27;</span>, <span class="string">&#x27;I&#x27;</span>, <span class="string">&#x27;J&#x27;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, r;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d %d&quot;</span>, &amp;n, &amp;r);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d=&quot;</span>, n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> ans[<span class="number">10005</span>], cur = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (n != <span class="number">0</span>) &#123; <span class="comment">// 注意这里是不等于，因为商可能为负数</span></span><br><span class="line">        <span class="keyword">int</span> mod = n % r; <span class="comment">// 获取余数</span></span><br><span class="line">        n /= r;          <span class="comment">// 获取商</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 如果余数小于0，那么商进一位，余数则等于进制数的绝对值减去余数的绝对值</span></span><br><span class="line">        <span class="keyword">if</span> (mod &lt; <span class="number">0</span>) n++, mod = <span class="built_in">abs</span>(r) - <span class="built_in">abs</span>(mod);</span><br><span class="line">        ans[cur++] = nums[mod];</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 由高位到低位倒序输出</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = cur - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) <span class="built_in">printf</span>(<span class="string">&quot;%c&quot;</span>, ans[i]); </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;(base%d)\n&quot;</span>, r);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
     
       
       <div class='footer'>
@@ -749,7 +724,8 @@
 说一下注意的点吧：
 
 要特判一下只有E的情况，应该输出0:0
-这里的11分制是指其中...</span></a><a class="item" href="/posts/algorithm/tamplate-twophase-bfs.html" title="【模板】双向BFS" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【模板】双向BFS</span><span class="excerpt">我们都知道BFS搜索的时间复杂度为$O(N^2)$。
+这里的11分制是指其中...</span></a><a class="item" href="/posts/algorithm/usaco-the-angry-bull.html" title="【题解】USACO 愤怒的牛" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【题解】USACO 愤怒的牛</span><span class="excerpt">题目链接「一本通 1.2 例 1」愤怒的牛
+题目分析所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列...</span></a><a class="item" href="/posts/algorithm/tamplate-twophase-bfs.html" title="【模板】双向BFS" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" /><span class="title">【模板】双向BFS</span><span class="excerpt">我们都知道BFS搜索的时间复杂度为$O(N^2)$。
 而双向BFS搜索因为是从两边开始搜索，时间复杂度会优化很多，为朴素B...</span></a></div></section></div>
         
         
@@ -785,7 +761,7 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T15:40:17+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-29T17:20:15+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：Aug 29, 2020</p>
@@ -811,15 +787,12 @@
     <div class="prev-next">
       
       
-        <a class='next' href='/posts/algorithm/tamplate-twophase-bfs.html'>
-          <p class='title'>【模板】双向BFS<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>我们都知道BFS搜索的时间复杂度为$O(N^2)$。
-而双向BFS搜索因为是从两边开始搜索，时间复杂度会优化很多，为朴素BFS的时间复杂度开根号。
-下面请看模板代码。
+        <a class='next' href='/posts/algorithm/usaco-the-angry-bull.html'>
+          <p class='title'>【题解】USACO 愤怒的牛<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目链接「一本通 1.2 例 1」愤怒的牛
+题目分析所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列），然后再用check()函数来判断答案的可行性。
 
-
-输入样例：
-12345...</p>
+         ...</p>
         </a>
       
     </div>
@@ -993,7 +966,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E4%BB%A3%E7%A0%81"><span class="toc-text">算法代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol>
     </div>
   </section>
 
@@ -1020,7 +993,7 @@
           <li><a class="flat-box"
             title="/categories/algorithm/" href="/categories/algorithm/"
             id="categoriesalgorithm"
-            ><div class='name'>算法竞赛</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>算法竞赛</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/daily/" href="/categories/daily/"
@@ -1049,7 +1022,7 @@
 
 
     <div class='content'>
-      <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/template/" style="font-size: 24px; color: #555">模板</a> <a href="/tags/sys-convert/" style="font-size: 14px; color: #999">进制转换</a> <a href="/tags/solution/" style="font-size: 24px; color: #555">题解</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
+      <a href="/tags/binary-answer/" style="font-size: 14px; color: #999">二分答案</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/template/" style="font-size: 19px; color: #777">模板</a> <a href="/tags/sys-convert/" style="font-size: 14px; color: #999">进制转换</a> <a href="/tags/solution/" style="font-size: 24px; color: #555">题解</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
     </div>
   </section>
 

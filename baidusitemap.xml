@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.luoling8192.top//posts/algorithm/noip2005-school-tree.html</loc>
+    <lastmod>2020-08-30</lastmod>
+  </url>
+  <url>
     <loc>https://blog.luoling8192.top//posts/algorithm/algorithmic-learning-notes.html</loc>
+    <lastmod>2020-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.luoling8192.top//posts/algorithm/template-quick-pow.html</loc>
     <lastmod>2020-08-30</lastmod>
   </url>
   <url>

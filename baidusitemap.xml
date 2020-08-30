@@ -2,7 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.luoling8192.top//posts/algorithm/algorithmic-learning-notes.html</loc>
-    <lastmod>2020-08-29</lastmod>
+    <lastmod>2020-08-30</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.luoling8192.top//posts/daily/welcome.html</loc>
+    <lastmod>2020-08-30</lastmod>
   </url>
   <url>
     <loc>https://blog.luoling8192.top//posts/algorithm/usaco-the-angry-bull.html</loc>
@@ -14,10 +18,6 @@
   </url>
   <url>
     <loc>https://blog.luoling8192.top//posts/algorithm/high-precision-template.html</loc>
-    <lastmod>2020-08-28</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.luoling8192.top//posts/daily/welcome.html</loc>
     <lastmod>2020-08-28</lastmod>
   </url>
   <url>

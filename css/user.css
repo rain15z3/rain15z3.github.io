@@ -1,0 +1,83 @@
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>.darkmode-layer,
+.darkmode-toggle {
+    bottom: 90px !important;
+}
+
+.github-corner svg {
+    position: fixed !important;
+}
+
+a[href] {
+    transition: all .1s ease-out;
+    position: relative;
+    box-sizing: content-box;
+}
+
+a[href]:hover {
+    color: #ff6c6c !important;
+}
+
+.article-title a[href]:hover {
+    color: #555 !important;
+}
+
+.article-title a[href]::after {
+    content: '';
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    position: absolute;
+    background: #555;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    visibility: hidden;
+    transform: scaleX(0);
+}
+
+.article-title a[href]:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+.md a[href] {
+    color: #555;
+}
+
+.md a[href]::after {
+    content: '';
+    transition: all .1s ease-out;
+    position: absolute;
+    background: #555;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+}
+
+/* 排除 */
+.md .title a::after,
+.md .new-meta-box .author::after,
+.md .new-meta-box .category-link::after,
+.md .new-meta-box .comments-count a::after,
+.md .prev::after,
+.md .next::after,
+.md .item::after,
+.md .tag::after {
+    width: 0 !important;
+}
+
+
+.post-tags * {
+    font-size: 0.875rem;
+}
+
+.post-tags a {
+    color: #888;
+    transition: all .1s ease-out;
+}
+
+.post-tags a:hover {
+    color: #ff6c6c !important;
+}

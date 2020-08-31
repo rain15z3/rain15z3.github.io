@@ -1,5 +1,5 @@
-https://blog.luoling8192.top/posts/algorithm/noip2005-school-tree.html
-https://blog.luoling8192.top/posts/algorithm/template-quick-pow.html
-https://blog.luoling8192.top/posts/algorithm/algorithmic-learning-notes.html
-https://blog.luoling8192.top/posts/algorithm/usaco-the-angry-bull.html
-https://blog.luoling8192.top/posts/algorithm/noip2000-sys-convert.html
+https://blog.luoling8192.top/posts/algorithm-template/trie-tree.html
+https://blog.luoling8192.top/posts/algorithm-solution/noip2005-school-tree.html
+https://blog.luoling8192.top/posts/algorithm-template/template-quick-pow.html
+https://blog.luoling8192.top/posts/algorithm-note/algorithmic-learning-notes.html
+https://blog.luoling8192.top/posts/algorithm-solution/usaco-the-angry-bull.html

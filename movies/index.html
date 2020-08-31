@@ -426,7 +426,7 @@
   
       <div class='cover-wrapper  dock' style="display: none;">
         
-          <div class='cover-bg lazyload placeholder' data-bg="/images/wallpaper.webp"></div>
+          <div class='cover-bg lazyload placeholder' data-bg="https://rainbowbird.oss-cn-beijing.aliyuncs.com/wallpaper.webp"></div>
         
         <div class='cover-body'>
   <div class='top'>
@@ -551,14 +551,14 @@
 
 <script>
   // 处理封面 此时 jquery 还没加载
-  if ("none" == "none") { // 移除封面
+  if ("blog" == "none") { // 移除封面
     document.getElementsByClassName('cover-wrapper')[0].style.display = "none";
     document.getElementsByClassName('l_header', 'cover-wrapper')[0].classList.add("show");
   } else {
-    if ("none" == "blog") { // 半屏
+    if ("blog" == "blog") { // 半屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'half');
       document.getElementsByClassName('scroll-down')[0].style.display = "none";
-    } else if ("none" == "docs") { // 全屏
+    } else if ("blog" == "docs") { // 全屏
       document.getElementsByClassName('cover-wrapper')[0].setAttribute('id', 'full');
       document.getElementsByClassName('scroll-down')[0].style.display = "";
     }
@@ -600,6 +600,7 @@
     <p>RainbowBird</p>
   </a>
 </div>
+
             
           
             
@@ -611,7 +612,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 30, 2020</p>
+    <p>发布于：Sep 1, 2020</p>
   </a>
 </div>
 
@@ -899,7 +900,7 @@
         <div class="hexo-douban-title">
             <a target="_blank" href="https://movie.douban.com/subject/26435736/">狐妖小红娘</a>
         </div>
-        <div class="hexo-douban-meta">2015-06-26(中国大陆) / 2017-07-01(日本) / 杨天翔 / 阿杰 / 刘校妤 / 张凯 / 乔诗语 / 魏超 / 图特哈蒙 / 边江 / 唐小喜 / 阎萌萌 / 邱秋 / 苏尚卿 / 徐佳琦 / 郭浩然 / 张丽敏 / 杨凝 / 李诗萌 / 宝木中阳 / 黎筱濛 / 刘琮 / 张磊 / 羽多野涉 / 阿澄佳奈 / 米泽圆 / 金元寿子 / 桐井大介 / 酒卷光宏 / 立花慎之介 / 今井麻美 / 井上麻里奈 / 内田真礼 / 佐佐木启夫 / 加隈亚衣 / 末柄里惠 / 牧口真幸 / 田中爱美 / 藤原夏海 / 福西胜也 / Sorami Yuki / 金弦 / 龙吟 / 中国大陆 / enmusuyouko.com / 王昕 / 10分钟 / 喜剧 / 爱情 / 动画 / 庹小新 / 汉语普通话</div>
+        <div class="hexo-douban-meta">2015-06-26(中国大陆) / 2017-07-01(日本) / 杨天翔 / 张杰 / 刘校妤 / 张凯 / 乔诗语 / 魏超 / 图特哈蒙 / 边江 / 唐小喜 / 阎萌萌 / 邱秋 / 苏尚卿 / 徐佳琦 / 郭浩然 / 张丽敏 / 杨凝 / 李诗萌 / 宝木中阳 / 黎筱濛 / 刘琮 / 张磊 / 羽多野涉 / 阿澄佳奈 / 米泽圆 / 金元寿子 / 桐井大介 / 酒卷光宏 / 立花慎之介 / 今井麻美 / 井上麻里奈 / 内田真礼 / 佐佐木启夫 / 加隈亚衣 / 末柄里惠 / 牧口真幸 / 田中爱美 / 藤原夏海 / 福西胜也 / Sorami Yuki / 金弦 / 龙吟 / 中国大陆 / enmusuyouko.com / 王昕 / 10分钟 / 喜剧 / 爱情 / 动画 / 庹小新 / 汉语普通话</div>
     </div>
 </div>
 
@@ -3314,7 +3315,7 @@ for (var i = 0; i < firstpages.length; i++) {
     
       
         <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='/images/face.jpg'/>
+          <img no-lazy src='https://rainbowbird.oss-cn-beijing.aliyuncs.com/face.jpg'/>
         </a>
       
     
@@ -3416,9 +3417,19 @@ for (var i = 0; i < firstpages.length; i++) {
       <ul class="entry navigation">
         
           <li><a class="flat-box"
-            title="/categories/algorithm/" href="/categories/algorithm/"
-            id="categoriesalgorithm"
-            ><div class='name'>算法竞赛</div><div class='badge'>(7)</div></a></li>
+            title="/categories/algorithm-note/" href="/categories/algorithm-note/"
+            id="categoriesalgorithm-note"
+            ><div class='name'>算法竞赛-笔记</div><div class='badge'>(1)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/algorithm-solution/" href="/categories/algorithm-solution/"
+            id="categoriesalgorithm-solution"
+            ><div class='name'>算法竞赛-题解</div><div class='badge'>(4)</div></a></li>
+        
+          <li><a class="flat-box"
+            title="/categories/algorithm-template/" href="/categories/algorithm-template/"
+            id="categoriesalgorithm-template"
+            ><div class='name'>算法竞赛-模板</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/daily/" href="/categories/daily/"
@@ -3447,7 +3458,7 @@ for (var i = 0; i < firstpages.length; i++) {
 
 
     <div class='content'>
-      <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/binary-search/" style="font-size: 19px; color: #777">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/math/" style="font-size: 19px; color: #777">数论</a> <a href="/tags/template/" style="font-size: 24px; color: #555">模板</a> <a href="/tags/note/" style="font-size: 14px; color: #999">笔记</a> <a href="/tags/solution/" style="font-size: 24px; color: #555">题解</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
+      <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
     </div>
   </section>
 
@@ -3928,7 +3939,7 @@ if(supportCss3('mix-blend-mode')){
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" data-pjax></script>
+  <script defer src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js" data-pjax></script>
 
 
   
@@ -4093,5 +4104,5 @@ if(supportCss3('mix-blend-mode')){
 
     
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
+<script src="https://cdn.jsdelivr.net/npm/live2d-widget@^3.1.3/lib/L2Dwidget.min.js"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"https://cdn.jsdelivr.net/gh/nineya/blog_file/live2d-widget-model-shizuku/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"tagMode":false});</script></body>
 </html>

@@ -1,11 +1,11 @@
-https://blog.luoling8192.top/posts/algorithm-note/01-backpack.html
+https://blog.luoling8192.top/posts/algorithm-note/knapsack.html
 https://blog.luoling8192.top/posts/algorithm-template/segment-tree.html
 https://blog.luoling8192.top/posts/algorithm-template/trie-tree.html
-https://blog.luoling8192.top/posts/algorithm-solution/noip2005-school-tree.html
+https://blog.luoling8192.top/posts/algorithm-soultion/noip2005-school-tree.html
 https://blog.luoling8192.top/posts/algorithm-template/template-quick-pow.html
 https://blog.luoling8192.top/posts/algorithm-note/algorithmic-learning-notes.html
-https://blog.luoling8192.top/posts/algorithm-solution/usaco-the-angry-bull.html
-https://blog.luoling8192.top/posts/algorithm-solution/noip2000-sys-convert.html
+https://blog.luoling8192.top/posts/algorithm-soultion/usaco-the-angry-bull.html
+https://blog.luoling8192.top/posts/algorithm-soultion/noip2000-sys-convert.html
 https://blog.luoling8192.top/posts/algorithm-template/tamplate-twophase-bfs.html
-https://blog.luoling8192.top/posts/algorithm-solution/noip2003-table-tennis.html
+https://blog.luoling8192.top/posts/algorithm-soultion/noip2003-table-tennis.html
 https://blog.luoling8192.top/posts/algorithm-template/high-precision-template.html

@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -18,9 +16,14 @@
 
   <!-- 页面元数据 -->
   
-  <title>标签：STL - 洛灵酱的小窝</title>
+  <title>【算法学习】背包问题 - 洛灵酱的小窝</title>
+  
+    <meta name="keywords" content="动态规划,背包,01背包,完全背包">
   
 
+  
+    <meta name="description" content="今天好像终于搞懂了01背包问题。
+先放上代码，过程以后再补。">
   
 
   <!-- feed -->
@@ -426,7 +429,7 @@
 
   
   
-      <div class='cover-wrapper  dock' style="display: none;">
+      <div class='cover-wrapper post dock' style="display: none;">
         
           <div class='cover-bg lazyload placeholder' data-bg="https://rainbowbird.oss-cn-beijing.aliyuncs.com/wallpaper.webp"></div>
         
@@ -543,8 +546,8 @@
 
 
 <div id="pjax-data" style="display: none">
-  <div id="pjax-ispage">false</div>
-  <div id="pjax-pageTitle"></div>
+  <div id="pjax-ispage">true</div>
+  <div id="pjax-pageTitle">【算法学习】背包问题</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -573,81 +576,234 @@
         
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  <div class='article-header'>
     
       
-  <section class="post-list">
+      <div class="article-meta" id="top">
+        
+        
+        
+          <h1 class="title">
+            <a href="/posts/algorithm-note/knapsack.html">
+              【算法学习】背包问题
+            </a>
+          </h1>
+        
+        <div class='new-meta-box'>
+          
+            
+          
+            
+              <div class='new-meta-item author'>
+  <a class='author' href="https://blog.luoling8192.top" rel="nofollow">
+    <i class="fas fa-user fa-fw"></i>
+    <p>RainbowBird</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/algorithm-note/">算法竞赛-笔记</a>
+    </a>
+  </div>
+
+
+            
+          
+            
+              <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：Sep 4, 2020</p>
+  </a>
+</div>
+
+            
+          
+            
+              
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：273字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：1分钟</p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+  <div class="new-meta-item browse busuanzi">
+    <a class='notlink'>
+      <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+      <p>
+        <span id="busuanzi_value_page_pv">
+          <i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i>
+        </span>
+        次浏览
+      </p>
+    </a>
+  </div>
+
+
+            
+          
+            
+              
+<div class="new-meta-item comments-count">
+  
+  <a href="/posts/algorithm-note/knapsack.html#comments">
+    <i class="fas fa-comment-dots fa-fw"></i>
+    <span class="valine-comment-count" data-xid="/posts/algorithm-note/knapsack.html">0</span>
+    <span class="leancloud-comments-count">&nbsp;</span>
+  </a>
+</div>
+
+
+            
+          
+        </div>
+      </div>
+    
+  </div>
+
+
+  <div class="article-entry" itemprop="articleBody">
+    
+    
+    <p>今天好像终于搞懂了01背包问题。</p>
+<p>先放上代码，过程以后再补。</p>
+<a id="more"></a>
+<h2 id="01背包"><a href="#01背包" class="headerlink" title="01背包"></a>01背包</h2><h3 id="朴素"><a href="#朴素" class="headerlink" title="朴素"></a>朴素</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> T, m;</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">105</span>], v[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">105</span>][<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T &gt;&gt; m;</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = T; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &gt;= w[i]) &#123;</span><br><span class="line">                f[i][j] = max(f[i - <span class="number">1</span>][j], f[i - <span class="number">1</span>][j - w[i]] + v[i]);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                f[i][j] = f[i - <span class="number">1</span>][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[m][T] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> T, m;</span><br><span class="line"><span class="keyword">int</span> w[<span class="number">105</span>], v[<span class="number">105</span>];</span><br><span class="line"><span class="keyword">int</span> f[<span class="number">105</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; T &gt;&gt; m;</span><br><span class="line">    <span class="built_in">memset</span>(f, <span class="number">0</span>, <span class="keyword">sizeof</span>(f));</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++)</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; w[i] &gt;&gt; v[i];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = T; j &gt;= <span class="number">0</span>; j--) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j &gt;= w[i]) &#123;</span><br><span class="line">                f[j] = max(f[j], f[j - w[i]] + v[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; f[T] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="完全背包"><a href="#完全背包" class="headerlink" title="完全背包"></a>完全背包</h3><p>完全背包相当于01背包只需要改动一句即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = T; j &gt;= <span class="number">0</span>; j--)</span><br></pre></td></tr></table></figure>
+
+<p>改为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= T; j++)</span><br></pre></td></tr></table></figure>
+
     
       
+      <div class='footer'>
+        
         
           
+  <div class="related_posts">
+    <section class='header'>
+      <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
+    </section>
+    <section class='body'>
+      <div class="vlts-rps"><a class="item" href="/posts/algorithm-note/algorithmic-learning-notes.html" title="算法学习笔记" rel="bookmark "><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/algorithmic-learning-notes/2.jpg" class="lazyload placeholder" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/algorithmic-learning-notes/2.jpg" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" /><span class="title">算法学习笔记</span><span class="excerpt">蒟蒻的学习笔记，时不时拿出来看一看。</span></a></div></section></div>
         
-      
-    
-    
-      
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/posts/algorithm-note/algorithmic-learning-notes.html">
-        算法学习笔记
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>蒟蒻的学习笔记，时不时拿出来看一看。</p>
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>本文作者：RainbowBird</p>
+
+                
+              
+                
+                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm-note/knapsack.html>https://blog.luoling8192.top/posts/algorithm-note/knapsack.html</a></p>
+                
+              
+                
+                  <p>版权声明： 本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</p>
+
+                
+              
+            </blockquote>
+          </div>
+        
+        
+      </div>
     
   </div>
   
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        <time>2020-08-29</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/algorithm-note/">算法竞赛-笔记</a>
-          
-          <!-- 用户自定义开始 -->
-          <br>
-          <span class="post-tags">
-            
-            <a class="tag" href="/tags/data-structure/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>数据结构</span></a> <a class="tag" href="/tags/math/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>数论</span></a> <a class="tag" href="/tags/binary-tree/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>二叉树</span></a> <a class="tag" href="/tags/preliminary-contest/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>初赛</span></a> <a class="tag" href="/tags/binary-search/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>二分查找</span></a> <a class="tag" href="/tags/STL/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><span>STL</span></a>
-          </span>
-          <!-- 用户自定义结束 -->
-        
-      </div>
+    
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
       
-        <div>
-            <a class='readmore' href='/posts/algorithm-note/algorithmic-learning-notes.html'>
-            阅读全文
-          </a>
-        </div>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T23:31:47+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：Sep 5, 2020</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/DP/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>动态规划</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/knapsack/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>背包</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/01-knapsack/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>01背包</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/completely-knapsack/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>完全背包</p></a></div>
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/posts/algorithm-template/segment-tree.html'>
+          <p class='title'>【模板】线段树<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>什么是线段树以下内容摘自OI-Wiki
+
+线段树是算法竞赛中常用的用来维护区间信息的数据结构。
+
+
+线段树可以在$O(\log N)$的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -732,6 +888,29 @@
     
   </div>
 </section>
+
+  
+
+  
+    
+    
+
+
+
+  <section class="widget toc-wrapper shadow desktop" id="toc-div" >
+    
+  <header>
+    
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#01%E8%83%8C%E5%8C%85"><span class="toc-text">01背包</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%B4%E7%B4%A0"><span class="toc-text">朴素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96"><span class="toc-text">优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85"><span class="toc-text">完全背包</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
 
   
 
@@ -868,6 +1047,7 @@
 
 
 </aside>
+
 
 
       </div>

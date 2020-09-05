@@ -694,14 +694,14 @@
 </blockquote>
 <a id="more"></a>
 
-<p><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/2.png" class="lazyload" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/2.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=" alt="字典树的样子"></p>
+<p><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/2.png" class="lazyload placeholder" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/2.png" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" alt="字典树的样子"></p>
 <h2 id="为什么要用字典树"><a href="#为什么要用字典树" class="headerlink" title="为什么要用字典树"></a>为什么要用字典树</h2><p>Trie树的核心思想是空间换时间，利用字符串的公共前缀来减少无谓的字符串比较以达到提高查询效率的目的。</p>
 <h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> trie[<span class="number">10005</span>][<span class="number">26</span>]; <span class="comment">// 最大深度 最大字符集</span></span><br><span class="line"><span class="keyword">int</span> book[<span class="number">10005</span>];     <span class="comment">// 用于标识是否为终结点</span></span><br><span class="line"><span class="keyword">int</span> cur = <span class="number">1</span>;         <span class="comment">// 从1开始因为0是根节点</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;                  <span class="comment">// 从根节点开始遍历</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = str[i] - <span class="string">&#x27;a&#x27;</span>;   <span class="comment">// 把小写字母转换为数字（从0-25，分别对应a-z）</span></span><br><span class="line">        <span class="keyword">if</span> (!trie[p][c])        <span class="comment">// 如果当前节点没有一条为c的边</span></span><br><span class="line">            trie[p][c] = cur++; <span class="comment">// 添加一条边，边总数加1</span></span><br><span class="line">        p = trie[p][c];         <span class="comment">// 指针移到当前节点</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    book[p] = <span class="number">1</span>;                <span class="comment">// 遍历完成，在最后一条边上打上结束标记</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">search</span><span class="params">(<span class="built_in">string</span> str)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> c = str[i] - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">if</span> (!trie[p][c]) <span class="keyword">return</span> <span class="literal">false</span>; <span class="comment">// 如果当前字母的边没有找到则返回false</span></span><br><span class="line">        p = trie[p][c];                <span class="comment">// 指针指向当前节点</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> book[p] == <span class="number">1</span>;               <span class="comment">// 如果当前边有结束标记则说明找到了</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>简单写完<code>main</code>函数就完成了一个字典树的demo。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> a;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">        insert(a);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) &#123;</span><br><span class="line">        <span class="built_in">string</span> a;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; a;</span><br><span class="line">        <span class="keyword">if</span> (search(a)) <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Yes&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;No&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h2><p><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/1.png" class="lazyload" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/1.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII="></p>
+<h2 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h2><p><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/1.png" class="lazyload placeholder" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/trie-tree/1.png" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg"></p>
 
     
       
@@ -770,10 +770,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-31T21:39:29+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T23:31:58+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 31, 2020</p>
+    <p>更新于：Sep 5, 2020</p>
   </a>
 </div>
 
@@ -797,16 +797,16 @@
       
         <a class='prev' href='/posts/algorithm-template/segment-tree.html'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>【模板】线段树</p>
-          <p class='content'>什么是线段树以下内容摘自 OI-Wiki
+          <p class='content'>什么是线段树以下内容摘自OI-Wiki
 
 线段树是算法竞赛中常用的用来维护区间信息的数据结构。
 
 
-线段树可以在 $O (\log N)$ 的时间复杂度内实现单点修改、区间修改、区间查询（区间...</p>
+线段树可以在$O(\log N)$的时间复杂度内实现单点修改、区间修改、区间查询（区间求和，求...</p>
         </a>
       
       
-        <a class='next' href='/posts/algorithm-solution/noip2005-school-tree.html'>
+        <a class='next' href='/posts/algorithm-soultion/noip2005-school-tree.html'>
           <p class='title'>【题解】NOIP2005 校门外的树（离散化实现）<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>题目链接P1047 校门外的树
 今天用这道题目来练习一下离散化。
@@ -1040,8 +1040,8 @@
             ><div class='name'>算法竞赛-笔记</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/algorithm-solution/" href="/categories/algorithm-solution/"
-            id="categoriesalgorithm-solution"
+            title="/categories/algorithm-soultion/" href="/categories/algorithm-soultion/"
+            id="categoriesalgorithm-soultion"
             ><div class='name'>算法竞赛-题解</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
@@ -1071,7 +1071,7 @@
 
 
     <div class='content'>
-      <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/backpack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
+      <a href="/tags/01-knapsack/" style="font-size: 14px; color: #999">01背包</a> <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/completely-knapsack/" style="font-size: 14px; color: #999">完全背包</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/knapsack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
     </div>
   </section>
 

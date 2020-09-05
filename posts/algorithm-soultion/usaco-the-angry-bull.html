@@ -16,15 +16,21 @@
 
   <!-- 页面元数据 -->
   
-  <title>【题解】NOIP2005 校门外的树（离散化实现） - 洛灵酱的小窝</title>
+  <title>【题解】USACO 愤怒的牛 - 洛灵酱的小窝</title>
   
-    <meta name="keywords" content="离散化,前缀和">
+    <meta name="keywords" content="二分查找,USACO">
   
 
   
-    <meta name="description" content="题目链接P1047 校门外的树
-今天用这道题目来练习一下离散化。
-当然这道题并不需要离散化，但是当数据范围开到数组开不下时离散化还是很有必要的。">
+    <meta name="description" content="题目链接「一本通 1.2 例 1」愤怒的牛
+题目分析所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列），然后再用check()函数来判断答案的可行性。
+
+            求最小值最大或求最大值最小是典型的二分答案。
+          
+
+要注意的是二分的边界。
+
+推荐阅读：二分查找...">
   
 
   <!-- feed -->
@@ -548,7 +554,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">【题解】NOIP2005 校门外的树（离散化实现）</div>
+  <div id="pjax-pageTitle">【题解】USACO 愤怒的牛</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -590,8 +596,8 @@
         
         
           <h1 class="title">
-            <a href="/posts/algorithm-solution/noip2005-school-tree.html">
-              【题解】NOIP2005 校门外的树（离散化实现）
+            <a href="/posts/algorithm-soultion/usaco-the-angry-bull.html">
+              【题解】USACO 愤怒的牛
             </a>
           </h1>
         
@@ -614,7 +620,7 @@
   <div class='new-meta-item category'>
     <a class='notlink'>
       <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <a class="category-link" href="/categories/algorithm-solution/">算法竞赛-题解</a>
+      <a class="category-link" href="/categories/algorithm-soultion/">算法竞赛-题解</a>
     </a>
   </div>
 
@@ -625,7 +631,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 30, 2020</p>
+    <p>发布于：Aug 29, 2020</p>
   </a>
 </div>
 
@@ -636,7 +642,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：368字</p>
+      <p>字数：386字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -670,9 +676,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/posts/algorithm-solution/noip2005-school-tree.html#comments">
+  <a href="/posts/algorithm-soultion/usaco-the-angry-bull.html#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/posts/algorithm-solution/noip2005-school-tree.html">0</span>
+    <span class="valine-comment-count" data-xid="/posts/algorithm-soultion/usaco-the-angry-bull.html">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -689,13 +695,19 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1047">P1047 校门外的树</a></p>
-<p>今天用这道题目来练习一下离散化。</p>
-<p>当然这道题并不需要离散化，但是当数据范围开到数组开不下时离散化还是很有必要的。</p>
+    <h2 id="题目链接"><a href="#题目链接" class="headerlink" title="题目链接"></a>题目链接</h2><p><a target="_blank" rel="noopener" href="https://loj.ac/problem/10011">「一本通 1.2 例 1」愤怒的牛</a></p>
+<h2 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h2><p>所谓二分答案就是把所有的答案用二分的方法遍历一遍（前提是有序的单调序列），然后再用<code>check()</code>函数来判断答案的可行性。</p>
+<div class="note info">
+            <p><span class='p yellow'>求最小值最大</span>或<span class='p yellow'>求最大值最小</span>是典型的二分答案。</p>
+          </div>
+
+<p>要注意的是二分的边界。</p>
+<blockquote>
+<p>推荐阅读：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq1515312832/article/details/105846202">二分查找怎么写，边界如何确定，我应该是要左边还是要右边，我为何如此的蠢？？？</a></p>
+</blockquote>
 <a id="more"></a>
 
-<h2 id="题目代码"><a href="#题目代码" class="headerlink" title="题目代码"></a>题目代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> pos; <span class="comment">// 位置</span></span><br><span class="line">    <span class="keyword">int</span> num; <span class="comment">// 前缀和</span></span><br><span class="line">&#125; a[<span class="number">100005</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(Node a, Node b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a.pos &lt; b.pos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> l, m;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; l &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x, y;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x &gt;&gt; y;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 离散化存储</span></span><br><span class="line">        a[i*<span class="number">2</span><span class="number">-1</span>].pos = x;   <span class="comment">// 左端点的位置</span></span><br><span class="line">        a[i*<span class="number">2</span><span class="number">-1</span>].num = <span class="number">1</span>;   <span class="comment">// 左端点用1表示</span></span><br><span class="line">        a[i*<span class="number">2</span>].pos = y + <span class="number">1</span>; <span class="comment">// 右端点的位置（差分用，所以这里是y+1）</span></span><br><span class="line">        a[i*<span class="number">2</span>].num = <span class="number">-1</span>;    <span class="comment">// 右端点用-1表示</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(a + <span class="number">1</span>, a + m * <span class="number">2</span> + <span class="number">1</span>, cmp); <span class="comment">// 按照左端点的位置升序排列</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 前缀和</span></span><br><span class="line">    <span class="keyword">int</span> sum = <span class="number">0</span>, total = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m * <span class="number">2</span>; i++) &#123; <span class="comment">// 一共有2m个点，全部遍历一遍</span></span><br><span class="line">        sum += a[i].num; <span class="comment">// sum用来存储当前状态</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 当sum的值由0变为1时说明中间经过了一段没有树的区间</span></span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">1</span> &amp;&amp; a[i].num == <span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">// 这时a[i]是左端点，a[i-1]是上个区间的右端点</span></span><br><span class="line">            total += a[i].pos - a[i<span class="number">-1</span>].pos; <span class="comment">// 加上区间长度</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 最后一个右端点到区间终点的距离</span></span><br><span class="line">    total += l - a[m*<span class="number">2</span>].pos + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; total &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* P10011 愤怒的牛</span></span><br><span class="line"><span class="comment"> * 来源: 信息学奥赛一本通 提高篇</span></span><br><span class="line"><span class="comment"> * 作者: RainbowBird</span></span><br><span class="line"><span class="comment"> * 日期: 2020-08-29</span></span><br><span class="line"><span class="comment"> * 算法: 二分答案</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; a;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> last = a[<span class="number">0</span>]; <span class="comment">// 先塞第一个牛棚</span></span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历区间</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = a.begin() + <span class="number">1</span>; it != a.end(); it++) &#123;</span><br><span class="line">        <span class="comment">// 如果当前的牛棚和上一个牛棚的距离大于或等于最大值</span></span><br><span class="line">        <span class="keyword">if</span> (*it - last &gt;= x) &#123;</span><br><span class="line">            last = *it;</span><br><span class="line">            count++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 如果可以把牛全部放进牛棚</span></span><br><span class="line">        <span class="keyword">if</span> (count &gt;= m) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; x;</span><br><span class="line">        a.push_back(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    sort(a.begin(), a.end(), less&lt;<span class="keyword">int</span>&gt;());</span><br><span class="line"></span><br><span class="line">    <span class="comment">// [l, r]为闭区间</span></span><br><span class="line">    <span class="keyword">int</span> l = a[<span class="number">0</span>], r = a[n<span class="number">-1</span>]; <span class="comment">// l, r, mid都为距离</span></span><br><span class="line">    <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>; <span class="comment">// mid为最短距离的最大值</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (check(mid)) l = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; r &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     
       
@@ -708,11 +720,9 @@
       <i class="fas fa-bookmark fa-fw" aria-hidden="true"></i><span>相关文章</span>
     </section>
     <section class='body'>
-      <div class="vlts-rps"><a class="item" href="/posts/algorithm-solution/noip2003-table-tennis.html" title="【题解】NOIP2003 乒乓球" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload placeholder" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" /><span class="title">【题解】NOIP2003 乒乓球</span><span class="excerpt">这道题我交了好几次，果然还是太菜了（
-说一下注意的点吧：
-
-要特判一下只有E的情况，应该输出0:0
-这里的11分制是指其中...</span></a></div></section></div>
+      <div class="vlts-rps"><a class="item" href="/posts/algorithm-note/algorithmic-learning-notes.html" title="算法学习笔记" rel="bookmark "><img src="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/algorithmic-learning-notes/2.jpg" class="lazyload placeholder" data-srcset="https://rainbowbird.oss-cn-beijing.aliyuncs.com/posts/algorithmic-learning-notes/2.jpg" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" /><span class="title">算法学习笔记</span><span class="excerpt">蒟蒻的学习笔记，时不时拿出来看一看。</span></a><a class="item" href="/posts/algorithm-soultion/noip2000-sys-convert.html" title="【题解】NOIP2000 进制转换" rel="bookmark "><img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" class="lazyload placeholder" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-wallpaper-minimalist/2020/046.jpg" srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/placeholder/c617bfd2497fcea598e621413e315c368f8d8e.svg" /><span class="title">【题解】NOIP2000 进制转换</span><span class="excerpt">题目链接P1017 进制转换
+题目分析这道题考察的是负进制转换。
+我们都知道，十进制转化为二进制应该不断用原数除以2取余，...</span></a></div></section></div>
         
         
           <div class='copyright'>
@@ -724,7 +734,7 @@
                 
               
                 
-                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm-solution/noip2005-school-tree.html>https://blog.luoling8192.top/posts/algorithm-solution/noip2005-school-tree.html</a></p>
+                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm-soultion/usaco-the-angry-bull.html>https://blog.luoling8192.top/posts/algorithm-soultion/usaco-the-angry-bull.html</a></p>
                 
               
                 
@@ -747,10 +757,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-08-31T18:13:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T23:31:34+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Aug 31, 2020</p>
+    <p>更新于：Sep 5, 2020</p>
   </a>
 </div>
 
@@ -759,7 +769,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/discretized/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>离散化</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/prefix-sum/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>前缀和</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/binary-search/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>二分查找</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/USACO/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>USACO</p></a></div>
 
 
         
@@ -772,26 +782,24 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/posts/algorithm-template/trie-tree.html'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>【模板】字典树</p>
-          <p class='content'>什么是字典树
-原理在这篇文章中讲的很清楚了，非常感谢。
+        <a class='prev' href='/posts/algorithm-note/algorithmic-learning-notes.html'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>算法学习笔记</p>
+          <p class='content'>蒟蒻的学习笔记，时不时拿出来看一看。
 
 
-
-
-为什么要用字典树Trie树的核心思想是空间换时间，利用字符串的公共前缀来减少无谓的字符串比较以达到提高查询效率的目的。
-代码实现1...</p>
+数论最大公约数gcd(a, b) = gcd(b, a % b)
+123456789int gcd(int a, int b) &#123;    in...</p>
         </a>
       
       
-        <a class='next' href='/posts/algorithm-template/template-quick-pow.html'>
-          <p class='title'>【模板】快速幂<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>今天学了倍增，终于把非递归快速幂看懂了。
+        <a class='next' href='/posts/algorithm-soultion/noip2000-sys-convert.html'>
+          <p class='title'>【题解】NOIP2000 进制转换<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>题目链接P1017 进制转换
+题目分析这道题考察的是负进制转换。
+我们都知道，十进制转化为二进制应该不断用原数除以2取余，得到的余数由高位到低位排列则能得到十进制数字在二进制下的数字。
 
 
-还是把$a^n$拆分成二进制形式。
-例如：$$a^{10} = a^{(1010) _ 2} = a^{1 * 2^3 + 0 * 2^2 + 1 ...</p>
+十进...</p>
         </a>
       
     </div>
@@ -918,7 +926,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E4%BB%A3%E7%A0%81"><span class="toc-text">题目代码</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E9%93%BE%E6%8E%A5"><span class="toc-text">题目链接</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90"><span class="toc-text">题目分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">代码实现</span></a></li></ol>
     </div>
   </section>
 
@@ -1018,8 +1026,8 @@
             ><div class='name'>算法竞赛-笔记</div><div class='badge'>(2)</div></a></li>
         
           <li><a class="flat-box"
-            title="/categories/algorithm-solution/" href="/categories/algorithm-solution/"
-            id="categoriesalgorithm-solution"
+            title="/categories/algorithm-soultion/" href="/categories/algorithm-soultion/"
+            id="categoriesalgorithm-soultion"
             ><div class='name'>算法竞赛-题解</div><div class='badge'>(4)</div></a></li>
         
           <li><a class="flat-box"
@@ -1049,7 +1057,7 @@
 
 
     <div class='content'>
-      <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/backpack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
+      <a href="/tags/01-knapsack/" style="font-size: 14px; color: #999">01背包</a> <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/completely-knapsack/" style="font-size: 14px; color: #999">完全背包</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/knapsack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
     </div>
   </section>
 

@@ -1,3 +1,123 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>/* build time:Tue Sep 01 2020 20:18:34 GMT+0800 (China Standard Time)*/
-html{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",Helvetica,Arial,sans-serif!important;text-shadow:rgba(0,0,0,.8) 0 0 0}.darkmode-layer,.darkmode-toggle{bottom:90px!important}.github-corner svg{position:fixed!important}a[href]{transition:all .1s ease-out;position:relative;box-sizing:content-box}a[href]:hover:not([class*=tag]){color:#ff6c6c!important}.article-title a[href]:hover{color:#555!important}.article-title a[href]::after{content:'';transition-duration:.2s;transition-timing-function:ease-in-out;transition-delay:0s;position:absolute;background:#555;bottom:0;left:0;height:2px;width:100%;visibility:hidden;transform:scaleX(0)}.article-title a[href]:hover::after{visibility:visible;transform:scaleX(1)}.post-tags *{font-size:.875rem}.post-tags a{color:#888;transition:all .1s ease-out}.post-tags a:hover{color:#ff6c6c!important}article .footer .related_posts .body .vlts-rps{overflow:unset!important;overflow-x:scroll!important}
-/* rebuild by neat */
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>* {
+    /* bug 容错 */
+}
+
+html {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif !important;
+    text-shadow: rgba(0, 0, 0, .8) 0px 0px 0px;
+}
+
+.darkmode-layer,
+.darkmode-toggle {
+    bottom: 90px !important;
+}
+
+.github-corner svg {
+    position: fixed !important;
+}
+
+a[href] {
+    transition: all .28s ease-out;
+    position: relative;
+    box-sizing: content-box;
+}
+
+a[href]:hover:not([class*="tag"]) {
+    color: #ff6c6c !important;
+}
+
+.article-title a[href]:hover {
+    color: #555 !important;
+}
+
+.article-title a[href]::after {
+    content: '';
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    position: absolute;
+    background: #555;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    visibility: hidden;
+    transform: scaleX(0);
+}
+
+.article-title a[href]:hover::after {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/*
+.md a[href] {
+    color: #2196f3 !important;
+}
+
+.md a[href]::after {
+    content: '';
+    transition: all .1s ease-out;
+    position: absolute;
+    background: #555;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+}
+
+.md .title a::after,
+.md .new-meta-box .author::after,
+.md .new-meta-box .category-link::after,
+.md .new-meta-box .comments-count a::after,
+.md .prev::after,
+.md .next::after,
+.md .item::after,
+.md .tag::after {
+    width: 0 !important;
+}
+*/
+
+.post-tags * {
+    font-size: 0.875rem;
+}
+
+.post-tags a {
+    color: #888;
+    transition: all .1s ease-out;
+}
+
+.post-tags a:hover {
+    color: #ff6c6c !important;
+}
+
+article .footer .related_posts .body .vlts-rps {
+    overflow: unset !important;
+    overflow-x: auto !important;
+}
+
+b, strong {
+	/*font-weight: 900 !important;*/
+	/*background: rgba(128, 128, 128, .35);*/
+	background: rgba(255, 255, 0, .35);
+}
+
+.shadow {
+    transition: all 0.28s ease;
+    /*background: rgba(255, 255, 255, .8);*/
+}
+
+.shadow:hover:not([class*="l_header"]) {
+    box-shadow: 0 2px 4px 0px rgba(0,0,0,0.1), 0 4px 8px 0px rgba(0,0,0,0.1), 0 8px 16px 0px rgba(0,0,0,0.1);
+}
+
+.friends .content a {
+    display: block;
+    transition: all .28s ease;
+    padding: 0 16px;
+    padding-left: 12px;
+}
+
+.friends .content a:hover {
+    background: var(--color-site-bg);
+}

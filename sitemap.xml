@@ -93,13 +93,6 @@
   </url>
   
   <url>
-    <loc>https://blog.luoling8192.top/friends/</loc>
-    
-    <lastmod>2020-08-29</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://blog.luoling8192.top/progress/</loc>
     
     <lastmod>2020-08-28</lastmod>
@@ -130,7 +123,7 @@
 
   <url>
     <loc>https://blog.luoling8192.top/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -138,147 +131,147 @@
   
   <url>
     <loc>https://blog.luoling8192.top/tags/search/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/data-structure/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/trie-tree/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/redouble/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/quick-pow/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/segment-tree/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/high-precision/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/DP/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/knapsack/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/01-knapsack/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/tags/completely-knapsack/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/math/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/binary-tree/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/preliminary-contest/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/binary-search/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/data-structure/</loc>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/STL/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.luoling8192.top/tags/NOIP/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <loc>https://blog.luoling8192.top/tags/redouble/</loc>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://blog.luoling8192.top/tags/string/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <loc>https://blog.luoling8192.top/tags/quick-pow/</loc>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/discretized/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/prefix-sum/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/NOIP/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/trie-tree/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/string/</loc>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/tags/USACO/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/segment-tree/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/DP/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/knapsack/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/01-knapsack/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.luoling8192.top/tags/completely-knapsack/</loc>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -286,22 +279,22 @@
 
   
   <url>
+    <loc>https://blog.luoling8192.top/categories/algorithm-soultion/</loc>
+    <lastmod>2020-09-13</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.luoling8192.top/categories/algorithm-template/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>https://blog.luoling8192.top/categories/algorithm-note/</loc>
-    <lastmod>2020-09-05</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.luoling8192.top/categories/algorithm-soultion/</loc>
-    <lastmod>2020-09-05</lastmod>
+    <lastmod>2020-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

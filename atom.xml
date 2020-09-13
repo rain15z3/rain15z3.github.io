@@ -122,7 +122,7 @@
     <link href="https://blog.luoling8192.top/posts/algorithm-template/template-quick-pow.html"/>
     <id>https://blog.luoling8192.top/posts/algorithm-template/template-quick-pow.html</id>
     <published>2020-08-30T11:27:01.000Z</published>
-    <updated>2020-09-05T15:32:07.253Z</updated>
+    <updated>2020-09-05T15:32:07.181Z</updated>
     
     <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script><p>今天学了倍增，终于把非递归快速幂看懂了。</p><a id="more"></a><p>还是把$a^n$拆分成二进制形式。</p><p>例如：<br>$$<br>a^{10} = a^{(1010) _ 2} = a^{1 * 2^3 + 0 * 2^2 + 1 * 2^1 + 1 * 2^0} = a^{1 * 2^3} * a^{1 * 2^1}<br>$$</p><p>我们可以通过倍增的方法先计算$\mod p$意义下的$a^1$，$a^2$，$a^4$，$a^8$，$a^{16}$，$a^{32}$，再把它们根据$b$的二进制拆分乘起来。</p><p>下面请看代码实现：</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// a ^ b % p</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">quick_pow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = a; <span class="comment">// 倍增（a^1 a^2 a^3 ...）</span></span><br><span class="line">    <span class="keyword">int</span> ans = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (b &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (b &amp; <span class="number">1</span>) <span class="comment">// 二进制最后一位是1</span></span><br><span class="line">            ans = (ans * t) % p;</span><br><span class="line">        t = (t * t) % p;</span><br><span class="line">        b &gt;&gt;= <span class="number">1</span>; <span class="comment">// 计算下一个二进制的值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -157,8 +157,6 @@
     <category term="算法竞赛-笔记" scheme="https://blog.luoling8192.top/categories/algorithm-note/"/>
     
     
-    <category term="数据结构" scheme="https://blog.luoling8192.top/tags/data-structure/"/>
-    
     <category term="数论" scheme="https://blog.luoling8192.top/tags/math/"/>
     
     <category term="二叉树" scheme="https://blog.luoling8192.top/tags/binary-tree/"/>
@@ -166,6 +164,8 @@
     <category term="初赛" scheme="https://blog.luoling8192.top/tags/preliminary-contest/"/>
     
     <category term="二分查找" scheme="https://blog.luoling8192.top/tags/binary-search/"/>
+    
+    <category term="数据结构" scheme="https://blog.luoling8192.top/tags/data-structure/"/>
     
     <category term="STL" scheme="https://blog.luoling8192.top/tags/STL/"/>
     

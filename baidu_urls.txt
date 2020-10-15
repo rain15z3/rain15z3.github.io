@@ -1,3 +1,5 @@
+https://blog.luoling8192.top/posts/algorithm-template/dijkstra.html
+https://blog.luoling8192.top/posts/algorithm-soultion/cf1419a-digit-game.html
 https://blog.luoling8192.top/posts/algorithm-note/knapsack.html
 https://blog.luoling8192.top/posts/algorithm-template/segment-tree.html
 https://blog.luoling8192.top/posts/algorithm-template/trie-tree.html

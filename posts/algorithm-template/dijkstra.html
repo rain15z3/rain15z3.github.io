@@ -16,13 +16,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>【模板】高精度模板 - 洛灵酱的小窝</title>
+  <title>【模板】Dijkstra算法 - 洛灵酱的小窝</title>
   
-    <meta name="keywords" content="高精度">
+    <meta name="keywords" content="Dijkstra,最短路,图论">
   
 
   
-    <meta name="description" content="高精度加、减、乘（高精乘高精）、除（高精除以高精）模板。">
+    <meta name="description" content="算法简介Dijkstra算法是一种求最短路的算法，在使用优先队列进行优化后时间复杂度比较优秀。">
   
 
   <!-- feed -->
@@ -462,7 +462,7 @@
 
 <div id="pjax-data" style="display: none">
   <div id="pjax-ispage">true</div>
-  <div id="pjax-pageTitle">【模板】高精度模板</div>
+  <div id="pjax-pageTitle">【模板】Dijkstra算法</div>
   <div id="pjax-enable-cover">true</div>
   <div id="pjax-comment-path"></div>
   <div id="pjax-comment-placeholder"></div>
@@ -504,8 +504,8 @@
         
         
           <h1 class="title">
-            <a href="/posts/algorithm-template/high-precision-template.html">
-              【模板】高精度模板
+            <a href="/posts/algorithm-template/dijkstra.html">
+              【模板】Dijkstra算法
             </a>
           </h1>
         
@@ -539,7 +539,7 @@
               <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
-    <p>发布于：Aug 23, 2020</p>
+    <p>发布于：Sep 26, 2020</p>
   </a>
 </div>
 
@@ -550,13 +550,13 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：800字</p>
+      <p>字数：538字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
     <a class='notlink'>
       <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
-      <p>时长：4分钟</p>
+      <p>时长：2分钟</p>
     </a>
   </div>
 
@@ -584,9 +584,9 @@
               
 <div class="new-meta-item comments-count">
   
-  <a href="/posts/algorithm-template/high-precision-template.html#comments">
+  <a href="/posts/algorithm-template/dijkstra.html#comments">
     <i class="fas fa-comment-dots fa-fw"></i>
-    <span class="valine-comment-count" data-xid="/posts/algorithm-template/high-precision-template.html">0</span>
+    <span class="valine-comment-count" data-xid="/posts/algorithm-template/dijkstra.html">0</span>
     <span class="leancloud-comments-count">&nbsp;</span>
   </a>
 </div>
@@ -603,20 +603,42 @@
   <div class="article-entry" itemprop="articleBody">
     
     
-    <p>高精度加、减、乘（高精乘高精）、除（高精除以高精）模板。</p>
+    <h2 id="算法简介"><a href="#算法简介" class="headerlink" title="算法简介"></a>算法简介</h2><p>Dijkstra算法是一种求最短路的算法，在使用优先队列进行优化后时间复杂度比较优秀。</p>
 <a id="more"></a>
 
-<h2 id="高精度加法"><a href="#高精度加法" class="headerlink" title="高精度加法"></a>高精度加法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">add</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> na[<span class="number">105</span>], nb[<span class="number">105</span>], nc[<span class="number">10005</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(na, <span class="number">0</span>, <span class="keyword">sizeof</span>(na));</span><br><span class="line">    <span class="built_in">memset</span>(nb, <span class="number">0</span>, <span class="keyword">sizeof</span>(nb));</span><br><span class="line">    <span class="built_in">memset</span>(nc, <span class="number">0</span>, <span class="keyword">sizeof</span>(nc));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lena = a.length(), lenb = b.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena; i++) na[i] = a[lena-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenb; i++) nb[i] = b[lenb-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena + lenb; i++) &#123;</span><br><span class="line">        nc[i] += na[i] + nb[i];</span><br><span class="line">        <span class="keyword">if</span> (nc[i] &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            nc[i+<span class="number">1</span>]++;</span><br><span class="line">            nc[i] -= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lenc = lena + lenb + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lenc &gt; <span class="number">0</span> &amp;&amp; nc[--lenc] == <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> c[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenc; i &gt;= <span class="number">1</span>; i--) c[lenc-i] = nc[i] + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="算法原理"><a href="#算法原理" class="headerlink" title="算法原理"></a>算法原理</h2><p>如果图是不带负权的有向图或者无向图，我们可以从<code>s</code>点开始寻找它的所有出边，与数组<code>dis</code>（每个点离原点<code>s</code>点的最短距离）进行比较，如果有小于<code>dis[v]</code>的路径，则松弛该点，最后可以得到一个所有最短路径的表。</p>
+<h2 id="算法步骤"><a href="#算法步骤" class="headerlink" title="算法步骤"></a>算法步骤</h2><ol>
+<li>初始化<code>dis</code>数组，原点赋值为<code>0</code>，其它点全部赋值为<code>INF</code>（为原点到该点的距离）。</li>
+<li>重复<code>n</code>次操作，找到<code>x</code>的所有出边，对需要进行松弛的边进行松弛。</li>
+</ol>
+<p>该算法的时间复杂度为$O(n^2)$，使用优先队列优化后的算法时间复杂度为$O((n+m)\log m)$。</p>
+<p>文中代码边的存储使用链式前向星实现。</p>
+<h2 id="算法模板"><a href="#算法模板" class="headerlink" title="算法模板"></a>算法模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x7fffffff</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAXN = <span class="number">5</span> * <span class="number">10e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n, m, s;</span><br><span class="line"><span class="keyword">int</span> dis[MAXN], book[MAXN], head[MAXN], cnt = <span class="number">1</span>;</span><br><span class="line"><span class="built_in">priority_queue</span>&lt;<span class="built_in">pair</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; &gt; que;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 链式前向星</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> next, to, w;</span><br><span class="line">&#125; e[MAXN];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 加一条边</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> u, <span class="keyword">int</span> v, <span class="keyword">int</span> w)</span> </span>&#123;</span><br><span class="line">    e[cnt].w = w;</span><br><span class="line">    e[cnt].to = v;</span><br><span class="line">    e[cnt].next = head[u];</span><br><span class="line">    head[u] = cnt++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m &gt;&gt; s;</span><br><span class="line">    <span class="built_in">memset</span>(head, <span class="number">-1</span>, <span class="keyword">sizeof</span>(head));</span><br><span class="line">    <span class="built_in">memset</span>(book, <span class="number">0</span>, <span class="keyword">sizeof</span>(book));</span><br><span class="line">    fill(dis, dis + MAXN, INF);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 读入边</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="comment">// 有向带权图</span></span><br><span class="line">        <span class="keyword">int</span> u, v, w;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; u &gt;&gt; v &gt;&gt; w;</span><br><span class="line">        add(u, v, w);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Dijkstra</span></span><br><span class="line">    dis[s] = <span class="number">0</span>;</span><br><span class="line">    que.push(&#123;<span class="number">0</span>, s&#125;);</span><br><span class="line">    <span class="keyword">while</span> (!que.empty()) &#123;</span><br><span class="line">        <span class="keyword">int</span> x = que.top().second;</span><br><span class="line">        que.pop();</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 请勿重复查找</span></span><br><span class="line">        <span class="keyword">if</span> (book[x]) <span class="keyword">continue</span>;</span><br><span class="line">        book[x] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// 扫描所有出边</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = head[x]; i != <span class="number">-1</span>; i = e[i].next) &#123;</span><br><span class="line">            <span class="keyword">int</span> v = e[i].to;</span><br><span class="line">            <span class="keyword">if</span> (dis[v] &gt; dis[x] + e[i].w) &#123;</span><br><span class="line">                dis[v] = dis[x] + e[i].w; <span class="comment">// 松弛</span></span><br><span class="line">                que.push(&#123;-dis[v], v&#125;); <span class="comment">// 用pair实现可以把dis值赋值成负数就可以实现小根堆</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; dis[i] &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="高精度减法"><a href="#高精度减法" class="headerlink" title="高精度减法"></a>高精度减法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">sub</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> na[<span class="number">105</span>], nb[<span class="number">105</span>], nc[<span class="number">10005</span>];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(na, <span class="number">0</span>, <span class="keyword">sizeof</span>(na));</span><br><span class="line">    <span class="built_in">memset</span>(nb, <span class="number">0</span>, <span class="keyword">sizeof</span>(nb));</span><br><span class="line">    <span class="built_in">memset</span>(nc, <span class="number">0</span>, <span class="keyword">sizeof</span>(nc));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lena = a.length(), lenb = b.length();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena; i++) na[i] = a[lena-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenb; i++) nb[i] = b[lenb-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena + lenb; i++) &#123;</span><br><span class="line">        nc[i] += na[i] - nb[i];</span><br><span class="line">        <span class="keyword">if</span> (nc[i] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            nc[i+<span class="number">1</span>]--;</span><br><span class="line">            nc[i] += <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lenc = lena + lenb + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (lenc &gt; <span class="number">0</span> &amp;&amp; nc[--lenc] == <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> c[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenc; i &gt;= <span class="number">1</span>; i--) c[lenc-i] = nc[i] + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="高精度乘法"><a href="#高精度乘法" class="headerlink" title="高精度乘法"></a>高精度乘法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="built_in">string</span> <span class="title">mul</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> na[<span class="number">105</span>], nb[<span class="number">105</span>], nc[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">int</span> lena = a.length(), lenb = b.length();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">memset</span>(na, <span class="number">0</span>, <span class="keyword">sizeof</span>(na));</span><br><span class="line">    <span class="built_in">memset</span>(nb, <span class="number">0</span>, <span class="keyword">sizeof</span>(nb));</span><br><span class="line">    <span class="built_in">memset</span>(nc, <span class="number">0</span>, <span class="keyword">sizeof</span>(nc));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena; i++)</span><br><span class="line">        na[i] = a[lena - i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenb; i++)</span><br><span class="line">        nb[i] = b[lenb - i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= lenb; j++) &#123;</span><br><span class="line">            nc[i+j<span class="number">-1</span>] += na[i] * nb[j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; lena + lenb; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nc[i] &gt;= <span class="number">10</span>) &#123;</span><br><span class="line">            nc[i+<span class="number">1</span>] += nc[i] / <span class="number">10</span>;</span><br><span class="line">            nc[i] %= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> lenc = lena + lenb + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (nc[--lenc] == <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">char</span> c[<span class="number">10005</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenc; i &gt;= <span class="number">1</span>; i--) c[lenc-i] = nc[i] + <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="高精度除法"><a href="#高精度除法" class="headerlink" title="高精度除法"></a>高精度除法</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a[], <span class="keyword">int</span> b[], <span class="keyword">int</span> last, <span class="keyword">int</span> len)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (a[last+len] != <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 如果被除数的位数比除数大</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 逐位比较</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = len; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i+last<span class="number">-1</span>] &gt; b[i]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[i+last<span class="number">-1</span>] &lt; b[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 相等返回true</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">div</span><span class="params">(<span class="built_in">string</span> a, <span class="built_in">string</span> b)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 声明变量</span></span><br><span class="line">    <span class="keyword">int</span> lena = a.length(), lenb = b.length(), lenc = lena - lenb + <span class="number">2</span>, lend = max(lena, lenb) + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 清空变量</span></span><br><span class="line">    <span class="built_in">memset</span>(na, <span class="number">0</span>, <span class="keyword">sizeof</span>(na));</span><br><span class="line">    <span class="built_in">memset</span>(nb, <span class="number">0</span>, <span class="keyword">sizeof</span>(nb));</span><br><span class="line">    <span class="built_in">memset</span>(nc, <span class="number">0</span>, <span class="keyword">sizeof</span>(nc)); <span class="comment">// 商</span></span><br><span class="line">    <span class="built_in">memset</span>(nd, <span class="number">0</span>, <span class="keyword">sizeof</span>(nd)); <span class="comment">// 余数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 把数字倒过来存</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lena; i++) na[i] = a[lena-i] - <span class="string">&#x27;0&#x27;</span>, nd[i] = na[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= lenb; i++) nb[i] = b[lenb-i] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt;= lena; i++) nd[i] = na[i]; // 存余数</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 高精度除法 </span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lena - lenb + <span class="number">1</span>; i &gt; <span class="number">0</span>; i--) &#123; <span class="comment">// 被除数和除数对齐</span></span><br><span class="line">        <span class="comment">/* 456 / 12</span></span><br><span class="line"><span class="comment">         *      38</span></span><br><span class="line"><span class="comment">         * 12 |----</span></span><br><span class="line"><span class="comment">         *     456</span></span><br><span class="line"><span class="comment">         *     36</span></span><br><span class="line"><span class="comment">         *     ----</span></span><br><span class="line"><span class="comment">         *      96</span></span><br><span class="line"><span class="comment">         *      96</span></span><br><span class="line"><span class="comment">         *     ----</span></span><br><span class="line"><span class="comment">         *       0</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// 可以相减</span></span><br><span class="line">        <span class="keyword">while</span> (cmp(nd, nb, i, lenb)) &#123;</span><br><span class="line">            <span class="comment">// 高精度减法</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= lenb; j++) &#123;</span><br><span class="line">                nd[i+j<span class="number">-1</span>] -= nb[j];</span><br><span class="line">                <span class="keyword">if</span> (nd[i+j<span class="number">-1</span>] &lt; <span class="number">0</span>) &#123;</span><br><span class="line">                    nd[i+j]--;</span><br><span class="line">                    nd[i+j<span class="number">-1</span>] += <span class="number">10</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            nc[i]++; <span class="comment">// 商进一位</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出商</span></span><br><span class="line">    <span class="keyword">while</span> (nc[--lenc] == <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (lenc &lt;= <span class="number">0</span>) lenc++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lenc; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; nc[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出余数</span></span><br><span class="line">    <span class="keyword">while</span> (nd[--lend] == <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span> (lend &lt;= <span class="number">0</span>) lend++;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = lend; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; nd[i];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     
       
       <div class='footer'>
+        
+          <div class='references'>
+            <section class='header'>
+              
+                <i class="fas fa-quote-left fa-fw" aria-hidden="true"></i>
+              
+              <span>参考资料</span>
+            </section>
+            <section class='body'>
+              <ul>
+                
+                  <li>
+                    <a href="https://www.cnblogs.com/bcoier/p/10363284.html" rel="external nofollow noopener noreferrer" target="_blank">
+                    单源最短路径
+                    </a>
+                  </li>
+                
+              </ul>
+            </section>
+          </div>
         
         
         
@@ -629,7 +651,7 @@
                 
               
                 
-                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm-template/high-precision-template.html>https://blog.luoling8192.top/posts/algorithm-template/high-precision-template.html</a></p>
+                  <p>本文链接：<a href=https://blog.luoling8192.top/posts/algorithm-template/dijkstra.html>https://blog.luoling8192.top/posts/algorithm-template/dijkstra.html</a></p>
                 
               
                 
@@ -652,10 +674,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-05T23:32:11+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-09-26T20:54:08+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：Sep 5, 2020</p>
+    <p>更新于：Sep 26, 2020</p>
   </a>
 </div>
 
@@ -664,7 +686,7 @@
         
           
   
-  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/high-precision/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>高精度</p></a></div>
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Dijkstra/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Dijkstra</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/shortest-path/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>最短路</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/graph/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>图论</p></a></div>
 
 
         
@@ -677,16 +699,15 @@
   
     <div class="prev-next">
       
-        <a class='prev' href='/posts/algorithm-soultion/noip2003-table-tennis.html'>
-          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>【题解】NOIP2003 乒乓球</p>
-          <p class='content'>这道题我交了好几次，果然还是太菜了（
-说一下注意的点吧：
-
-要特判一下只有E的情况，应该输出0:0
-这里的11分制是指其中一个人有11分而不是总共11分
-要注意刚好比完一场还需要进行下一场，如果...</p>
-        </a>
       
+        <a class='next' href='/posts/algorithm-soultion/cf1419a-digit-game.html'>
+          <p class='title'>【题解】CF1419A Digit Game<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>蒟蒻第一次打codeforces结果爆零….
+今天早上看一下测试点发现原来是int存不下，我昨天怎么没发现呢！！！
+
+
+题目大意大概就是有两个人在玩选数游戏，Raze先开始选择，他只能选择奇数位...</p>
+        </a>
       
     </div>
   
@@ -706,6 +727,59 @@
 
 
 
+
+
+  <script>
+  // https://github.com/theme-next/hexo-theme-next/blob/master/layout/_third-party/math/mathjax.swig
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.0/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    // 文章章节标题不能为 “MathJax” ，否则会报错。
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
 
 
 
@@ -828,7 +902,7 @@
 
 
     <div class='content'>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%8A%A0%E6%B3%95"><span class="toc-text">高精度加法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E5%87%8F%E6%B3%95"><span class="toc-text">高精度减法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E4%B9%98%E6%B3%95"><span class="toc-text">高精度乘法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AB%98%E7%B2%BE%E5%BA%A6%E9%99%A4%E6%B3%95"><span class="toc-text">高精度除法</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E7%AE%80%E4%BB%8B"><span class="toc-text">算法简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="toc-text">算法原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A5%E9%AA%A4"><span class="toc-text">算法步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E6%A8%A1%E6%9D%BF"><span class="toc-text">算法模板</span></a></li></ol>
     </div>
   </section>
 

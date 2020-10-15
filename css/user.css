@@ -1,10 +1,10 @@
-<link rel="stylesheet" class="aplayer-secondary-style-marker" href="/assets/css/APlayer.min.css"><script src="/assets/js/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="/assets/js/Meting.min.js"></script>* {
+* {
     /* bug 容错 */
 }
 
 html {
     font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", Helvetica, Arial, sans-serif !important;
-    text-shadow: rgba(0, 0, 0, .8) 0px 0px 0px;
+    /*text-shadow: rgba(0, 0, 0, .8) 0px 0px 0px;*/
 }
 
 .darkmode-layer,
@@ -99,7 +99,7 @@ article .footer .related_posts .body .vlts-rps {
 b, strong {
 	/*font-weight: 900 !important;*/
 	/*background: rgba(128, 128, 128, .35);*/
-	background: rgba(255, 255, 0, .35);
+	/*background: rgba(255, 0, 0, .25);*/
 }
 
 .shadow {

@@ -5,7 +5,7 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
+      <meta name="robots" content="index,follow">
     
   
   <!-- 渲染优化 -->
@@ -105,10 +105,16 @@
       margin-bottom: 0 !important;
     }
 
-    .widget.blogger.shadow.desktop.mobile {
-      background: rgba(255, 255, 255, .9) !important;
-      color: #666;
-      padding: 16px;
+    @media screen and (max-width: 1024px) {
+      .widget.blogger {
+        background: rgba(255, 255, 255, .7) !important;
+        color: #666;
+        padding: 16px;
+      }
+    }
+
+    .widget.blogger .content .social-wrapper a.social {
+      width: 25px !important;
     }
   </style>
   
@@ -411,6 +417,13 @@
               <i class='fas fa-quote-left fa-fw'></i><p>说说</p>
             </a>
           
+            <a href="/friends/"
+              
+              
+              id="friends">
+              <i class='fas fa-link fa-fw'></i><p>友链</p>
+            </a>
+          
             <a href="/about/"
               
               
@@ -598,16 +611,32 @@
       <div class="social-wrapper">
         
           
-            <a href="mailto:rbxin2003@outlook.com"
-              class="social fas fa-envelope flat-btn"
+            <a href="https://github.com/rain15z3/"
+              class="social fab fa-github fa-fw flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
           
         
           
-            <a href="https://github.com/rain15z3/"
-              class="social fab fa-github flat-btn"
+            <a href="https://twitter.com/Luoling8192"
+              class="social fab fa-twitter fa-fw flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="https://t.me/luoling8192"
+              class="social fab fa-telegram fw-fw flat-btn"
+              target="_blank"
+              rel="external nofollow noopener noreferrer">
+            </a>
+          
+        
+          
+            <a href="mailto:rbxin2003@outlook.com"
+              class="social fas fa-envelope fa-fw flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -615,7 +644,7 @@
         
           
             <a href="https://zhihu.com/people/luoling8192"
-              class="social fab fa-zhihu flat-btn"
+              class="social fab fa-zhihu fa-fw flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -623,7 +652,7 @@
         
           
             <a href="https://weibo.com/luoling8192"
-              class="social fab fa-weibo flat-btn"
+              class="social fab fa-weibo fa-fw flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -631,7 +660,7 @@
         
           
             <a href="http://wpa.qq.com/msgrd?v=3&uin=1284114089&site=qq&menu=yes"
-              class="social fab fa-qq flat-btn"
+              class="social fab fa-qq fa-fw flat-btn"
               target="_blank"
               rel="external nofollow noopener noreferrer">
             </a>
@@ -664,6 +693,9 @@
   <div class='content' style="padding: 12px;">
     
       欢迎来到我的博客！
+      <br> 
+    
+      <a href="https://blog.luoling8192.top">我的主页</a>
       <br> 
     
       <a href="https://blog.luoling8192.top/about/">关于我</a>
@@ -715,6 +747,8 @@
     
       <a target="_blank" rel="noopener" href="https://tianpeng2333.github.io">Peng's blog</a>
     
+      <a target="_blank" rel="noopener" href="https://blog.rain.cx/">一叶知秋</a>
+    
   </div>
 </section>
 
@@ -745,12 +779,12 @@
           <li><a class="flat-box"
             title="/categories/algorithm-soultion/" href="/categories/algorithm-soultion/"
             id="categoriesalgorithm-soultion"
-            ><div class='name'>算法竞赛-题解</div><div class='badge'>(4)</div></a></li>
+            ><div class='name'>算法竞赛-题解</div><div class='badge'>(5)</div></a></li>
         
           <li><a class="flat-box"
             title="/categories/algorithm-template/" href="/categories/algorithm-template/"
             id="categoriesalgorithm-template"
-            ><div class='name'>算法竞赛-模板</div><div class='badge'>(5)</div></a></li>
+            ><div class='name'>算法竞赛-模板</div><div class='badge'>(6)</div></a></li>
         
       </ul>
     </div>
@@ -774,7 +808,7 @@
 
 
     <div class='content'>
-      <a href="/tags/01-knapsack/" style="font-size: 14px; color: #999">01背包</a> <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 24px; color: #555">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/completely-knapsack/" style="font-size: 14px; color: #999">完全背包</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 24px; color: #555">数据结构</a> <a href="/tags/math/" style="font-size: 24px; color: #555">数论</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/knapsack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
+      <a href="/tags/01-knapsack/" style="font-size: 14px; color: #999">01背包</a> <a href="/tags/Codeforces/" style="font-size: 14px; color: #999">Codeforces</a> <a href="/tags/Dijkstra/" style="font-size: 14px; color: #999">Dijkstra</a> <a href="/tags/NOIP/" style="font-size: 24px; color: #555">NOIP</a> <a href="/tags/STL/" style="font-size: 14px; color: #999">STL</a> <a href="/tags/USACO/" style="font-size: 14px; color: #999">USACO</a> <a href="/tags/binary-search/" style="font-size: 19px; color: #777">二分查找</a> <a href="/tags/binary-tree/" style="font-size: 14px; color: #999">二叉树</a> <a href="/tags/redouble/" style="font-size: 14px; color: #999">倍增</a> <a href="/tags/preliminary-contest/" style="font-size: 14px; color: #999">初赛</a> <a href="/tags/prefix-sum/" style="font-size: 14px; color: #999">前缀和</a> <a href="/tags/DP/" style="font-size: 14px; color: #999">动态规划</a> <a href="/tags/graph/" style="font-size: 14px; color: #999">图论</a> <a href="/tags/trie-tree/" style="font-size: 14px; color: #999">字典树</a> <a href="/tags/string/" style="font-size: 14px; color: #999">字符串</a> <a href="/tags/completely-knapsack/" style="font-size: 14px; color: #999">完全背包</a> <a href="/tags/quick-pow/" style="font-size: 14px; color: #999">快速幂</a> <a href="/tags/search/" style="font-size: 14px; color: #999">搜索</a> <a href="/tags/data-structure/" style="font-size: 19px; color: #777">数据结构</a> <a href="/tags/math/" style="font-size: 19px; color: #777">数论</a> <a href="/tags/shortest-path/" style="font-size: 14px; color: #999">最短路</a> <a href="/tags/discretized/" style="font-size: 14px; color: #999">离散化</a> <a href="/tags/segment-tree/" style="font-size: 14px; color: #999">线段树</a> <a href="/tags/knapsack/" style="font-size: 14px; color: #999">背包</a> <a href="/tags/high-precision/" style="font-size: 14px; color: #999">高精度</a>
     </div>
   </section>
 
@@ -807,8 +841,8 @@
         <div class="social-wrapper">
           
             
-              <a href="mailto:rbxin2003@outlook.com"
-                class="social fas fa-envelope flat-btn"
+              <a href="https://github.com/rain15z3/"
+                class="social fab fa-github fa-fw flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
                 
@@ -816,8 +850,26 @@
             
           
             
-              <a href="https://github.com/rain15z3/"
-                class="social fab fa-github flat-btn"
+              <a href="https://twitter.com/Luoling8192"
+                class="social fab fa-twitter fa-fw flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="https://t.me/luoling8192"
+                class="social fab fa-telegram fw-fw flat-btn"
+                target="_blank"
+                rel="external nofollow noopener noreferrer">
+                
+              </a>
+            
+          
+            
+              <a href="mailto:rbxin2003@outlook.com"
+                class="social fas fa-envelope fa-fw flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
                 
@@ -826,7 +878,7 @@
           
             
               <a href="https://zhihu.com/people/luoling8192"
-                class="social fab fa-zhihu flat-btn"
+                class="social fab fa-zhihu fa-fw flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
                 
@@ -835,7 +887,7 @@
           
             
               <a href="https://weibo.com/luoling8192"
-                class="social fab fa-weibo flat-btn"
+                class="social fab fa-weibo fa-fw flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
                 
@@ -844,7 +896,7 @@
           
             
               <a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1284114089&amp;site=qq&amp;menu=yes"
-                class="social fab fa-qq flat-btn"
+                class="social fab fa-qq fa-fw flat-btn"
                 target="_blank"
                 rel="external nofollow noopener noreferrer">
                 
@@ -917,6 +969,74 @@
         
         >
         <i class='fa fa-print fa-fw'></i> 打印页面
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="window.location.href = 'mailto:rbxin2003@outlook.com'"
+        
+        >
+        <i class='fas fa-envelope fa-fw fa-fw'></i> 给我发邮件
+      </a>
+    </li>
+  
+        
+      
+        
+          <hr>
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="pjax.loadUrl('https://blog.luoling8192.top/shuoshuo')"
+        
+        >
+        <i class='fas fa-quote-left fa-fw fa-fw'></i> 说说
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="pjax.loadUrl('https://blog.luoling8192.top/friends')"
+        
+        >
+        <i class='fas fa-link fa-fw fa-fw'></i> 友链
+      </a>
+    </li>
+  
+        
+      
+        
+          
+    <li>
+      <a class='vlts-menu fix-cursor-default' 
+        
+        
+        
+          onclick="pjax.loadUrl('https://blog.luoling8192.top/about')"
+        
+        >
+        <i class='fas fa-info-circle fa-fw fa-fw'></i> 关于
       </a>
     </li>
   
@@ -1049,7 +1169,7 @@
       }
 
       // 有音乐播放器
-      if (true == true && ('home,print,hr,music'||[]).includes('music')) {
+      if (true == true && ('home,print,email,hr,shuoshuo,friends,about,hr,music'||[]).includes('music')) {
         // 如果有aplayer，初始化一下
       	try {
       		checkAPlayer();

@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://blog.luoling8192.top//posts/algorithm-note/algorithmic-learning-notes.html</loc>
+    <lastmod>2020-10-18</lastmod>
+  </url>
+  <url>
     <loc>https://blog.luoling8192.top//posts/algorithm-template/dijkstra.html</loc>
     <lastmod>2020-09-26</lastmod>
   </url>
   <url>
     <loc>https://blog.luoling8192.top//posts/algorithm-soultion/cf1419a-digit-game.html</loc>
     <lastmod>2020-09-20</lastmod>
-  </url>
-  <url>
-    <loc>https://blog.luoling8192.top//posts/algorithm-note/algorithmic-learning-notes.html</loc>
-    <lastmod>2020-09-13</lastmod>
   </url>
   <url>
     <loc>https://blog.luoling8192.top//posts/algorithm-soultion/noip2000-sys-convert.html</loc>
